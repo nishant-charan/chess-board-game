@@ -9,7 +9,7 @@ public class MovementFactory {
             case PAWN:
                 return new PawnMovement();
             case KING:
-                return null;
+                return new KingMovement();
             case QUEEN:
                 return null;
             default:

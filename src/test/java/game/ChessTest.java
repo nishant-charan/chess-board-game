@@ -33,10 +33,18 @@ public class ChessTest {
     }
 
     @Test
-    @DisplayName("Throw Exception when piece is found and position is valid")
+    @DisplayName("Throw Exception when piece is pawn and position is valid")
     void findAllValidMovementTest_3() {
         List<String> validPositions = chess.findValidMovementPositions("pawn, G1");
 
         assertThat(validPositions).containsExactlyInAnyOrder("G2");
+    }
+
+    @Test
+    @DisplayName("Throw Exception when piece is king and position is valid")
+    void findAllValidMovementTest_4() {
+        List<String> validPositions = chess.findValidMovementPositions("king, D1");
+
+        assertThat(validPositions).containsExactlyInAnyOrder("C1","C2","D2","E2","E1");
     }
 }
