@@ -5,7 +5,7 @@ import com.chess.game.Position;
 import java.util.ArrayList;
 import java.util.List;
 
-public class KingMovement implements Movement {
+public class QueenMovement implements Movement {
 
     @Override
     public List<String> getMovementPositions(String[][] board, Position position) {
@@ -21,10 +21,13 @@ public class KingMovement implements Movement {
             int newRow = position.getRow() + direction[0];
             int newCol = position.getColumn() + direction[1];
 
-            if(isValidPosition(newRow, newCol, board.length)) {
+            while(isValidPosition(newRow, newCol, board.length)) {
                 validPositions.add(board[newRow][newCol]);
+                newRow += direction[0];
+                newCol += direction[1];
             }
         }
+
         return validPositions;
     }
 }

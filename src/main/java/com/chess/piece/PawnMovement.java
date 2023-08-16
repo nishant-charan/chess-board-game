@@ -11,7 +11,7 @@ public class PawnMovement implements Movement {
     public List<String> getMovementPositions(String[][] board, Position position) {
         List<String> validPositions = new ArrayList<>();
 
-        if (position.getRow() != 0) {
+        if (isValidPosition(position.getRow()-1, position.getColumn(), board.length)) {
             validPositions.add(board[position.getRow() - 1][position.getColumn()]);
         }
 

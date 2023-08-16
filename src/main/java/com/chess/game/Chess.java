@@ -24,7 +24,7 @@ public class Chess {
             inputList.add(tokenizer.nextToken());
         }
         String pieceTypeStr = inputList.get(0).toUpperCase();
-        String currentPosition = inputList.get(1);
+        String currentPosition = inputList.get(1).toUpperCase();
 
         PieceType pieceType = PieceType.getPieceType(pieceTypeStr);
         MovementFactory movementFactory = new MovementFactory();

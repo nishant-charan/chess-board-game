@@ -11,7 +11,7 @@ public class MovementFactory {
             case KING:
                 return new KingMovement();
             case QUEEN:
-                return null;
+                return new QueenMovement();
             default:
                 throw new IllegalArgumentException("Unknown piece : " + pieceType.name());
         }
