@@ -47,4 +47,12 @@ public class ChessTest {
 
         assertThat(validPositions).containsExactlyInAnyOrder("C1","C2","D2","E2","E1");
     }
+
+    @Test
+    @DisplayName("Throw Exception when piece is queen and position is valid")
+    void findAllValidMovementTest_5() {
+        List<String> validPositions = chess.findValidMovementPositions("queen, E4");
+
+        assertThat(validPositions).containsExactlyInAnyOrder("A4", "B4", "C4", "D4", "F4", "G4", "H4", "E1", "E2", "E3", "E5", "E6", "E7", "E8", "A8", "B7", "C6", "D5", "F3", "G2", "H1", "B1", "C2", "D3", "F5", "G6", "H7");
+    }
 }
