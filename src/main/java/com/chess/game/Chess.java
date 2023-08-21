@@ -1,9 +1,8 @@
 package com.chess.game;
 
-import com.chess.exception.IllegalPositionException;
+import com.chess.enums.PieceType;
 import com.chess.piece.Movement;
 import com.chess.piece.MovementFactory;
-import com.chess.enums.PieceType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,12 +28,6 @@ public class Chess {
         PieceType pieceType = PieceType.getPieceType(pieceTypeStr);
         MovementFactory movementFactory = new MovementFactory();
         Movement movement = movementFactory.movementByPieceType(pieceType);
-        List<String> positions;
-        try {
-            positions = movement.getMovementPositions(chessBoard.board, new Position(currentPosition));
-        } catch (ArrayIndexOutOfBoundsException exception) {
-            throw new IllegalPositionException(String.format("Position %s is not found", currentPosition));
-        }
-        return positions;
+        return movement.getMovementPositions(chessBoard.board, new Position(currentPosition));
     }
 }

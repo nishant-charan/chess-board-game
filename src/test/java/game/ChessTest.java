@@ -29,7 +29,7 @@ public class ChessTest {
     void findAllValidMovementTest_2() {
         assertThatCode(() -> chess.findValidMovementPositions("Pawn, D9"))
                 .isExactlyInstanceOf(IllegalPositionException.class)
-                .hasMessage("Position D9 is not found");
+                .hasMessage("Position D9 is not valid");
     }
 
     @Test
